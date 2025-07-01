@@ -6,6 +6,12 @@ on:
   push:
     branches: ["main"]
 
+# ✅ Required Permissions for OIDC and Pages
+permissions:
+  contents: read       # To read files from the repo
+  pages: write         # To deploy to GitHub Pages
+  id-token: write      # To get an OIDC token (required for deploy-pages)
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -16,13 +22,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload entire repository (adjust if needed)
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
