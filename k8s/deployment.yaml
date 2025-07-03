@@ -17,3 +17,5 @@ spec:
         image: pantalagopichand/static-site-httpd:latest
         ports:
         - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
