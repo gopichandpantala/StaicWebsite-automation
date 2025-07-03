@@ -13,9 +13,9 @@ spec:
         app: static-site
     spec:
       containers:
-      - name: static-site
-        image: pantalagopichand/static-site-httpd:latest
-        ports:
-        - containerPort: 80
+        - name: static-site
+          image: pantalagopichand/static-site-httpd:latest
+          ports:
+            - containerPort: 80
       imagePullSecrets:
         - name: regcred
