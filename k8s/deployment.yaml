@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: static-site
-          image: pantalagopichand/static-site:latest
+          image: pantalagopichand/static-site:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
